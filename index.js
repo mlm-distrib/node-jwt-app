@@ -29,7 +29,7 @@ app.post('/login', (req, res) => {
     res.status(401).json({ message: 'Invalid email or password' });
   } else {
     // If user found, generate JWT token and return success response
-    const token = jwt.sign({ sub: user.id }, secretKey, { expiresIn: '1h' });
+    const token = jwt.sign({ sub: user.id }, secretKey, { expiresIn: '1m' });
     res.json({ token });
   }
 });
